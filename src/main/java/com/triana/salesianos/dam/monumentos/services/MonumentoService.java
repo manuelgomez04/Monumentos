@@ -16,6 +16,7 @@ public class MonumentoService {
 
 
     public List<Monumento> obtenerTodos() {
+
         return monumentoRepository.findAll();
     }
 
@@ -25,8 +26,21 @@ public class MonumentoService {
 
 
 
-
     public Monumento modificarMonumento(Long id, Monumento monumento) {
-        return monumentoRepository.findById(id).orElse(null);
+        Monumento monumentoEncontrado = monumentoRepository.findById(id).orElse(null);
+
+        if(monumentoEncontrado!=null){
+            return monumentoRepository.save(monumento);
+        } else
+            return monumento;
+    }
+
+    public void deleteByiD(Long id) {
+        monumentoRepository.deleteById(id);
+
+    }
+
+    public Monumento addMonumento (Monumento monumento){
+        return monumentoRepository.save(monumento);
     }
 }

@@ -19,10 +19,10 @@ public class Monumento {
     private long id;
 
     @Column(nullable = false, length = 2) //Creamos el código de país de tal manera que solo tenga dos caracteres
-    private String codigopaís;
+    private String codigoPais;
 
     @Column(nullable = false)
-    private String nombre, nombreCiudad, nombreMonumento, descripcion, urlFoto;
+    private String nombrePais, nombreCiudad, nombreMonumento, descripcion, urlFoto;
 
     private  double latitud, altitud;
 
